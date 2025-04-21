@@ -56,7 +56,7 @@ def Block_SVD(A, s=None, tol=1e-6, max_iter=50, power_iter=1):
 
 
 
-# Example usage
+# Example usage (not reqd)
 if __name__ == "__main__":
     import time
     import numpy as np
