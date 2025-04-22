@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-from time import perf_counter
 
 def read_image(path: str) -> np.ndarray:
     """
@@ -53,12 +52,7 @@ def dct_pipeline(image_path: str) -> np.ndarray:
     """
     original = read_image(image_path)
     normalized = normalize_image(original)
-    
-    dct_start = perf_counter()
     dct_result = apply_dct(normalized)
     idct_result = apply_idct(dct_result)
-    dct_end = perf_counter()
     
-    print(f"Time: {dct_end - dct_start:.4f} seconds")
-
     return reconstruct_image(idct_result)
