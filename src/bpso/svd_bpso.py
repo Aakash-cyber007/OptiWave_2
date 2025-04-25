@@ -5,7 +5,7 @@ import math
 import random
 from ..svd.block_svd import Block_SVD
 
-def svd_bpso(input_matrix, p_n = None, n_iterations = None)
+def svd_bpso(input_matrix, p_n = None, n_iterations = None):
     # Check whether the input matrix is colour or gray
     if len(image.shape)>2:
         X = image.dot([0.299, 0.5870, 0.114])
