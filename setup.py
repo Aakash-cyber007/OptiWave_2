@@ -1,30 +1,31 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="image_processing_project",  # The name of your project
-    version="0.1.0",  # Starting version
-    description="A collection of image processing techniques including SVD, DCT, and K-SVD.",
-    author="Your Name",  # Add your name
-    author_email="your_email@example.com",  # Your email
-    url="https://github.com/yourusername/image_processing_project",  # Your GitHub repository URL
-    packages=find_packages(),  # Automatically find all packages
-    install_requires=[  # List of dependencies
-        "numpy",  # Required for numerical operations
-        "matplotlib",  # Required for image visualization
-        "opencv-python",  # Required for OpenCV functions
-        "scipy",  # Required for SVD and sparse matrix operations
+    name='image_compression_project',
+    version='0.1.0',
+    description='A Python project implementing image compression using SVD, BPSO, DCT, and K-SVD',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    author='Your Name',
+    author_email='your.email@example.com',
+    url='https://github.com/yourusername/image_compression_project',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        'numpy>=1.21.0',
+        'opencv-python>=4.5.0',
+        'matplotlib>=3.3.0',
+        'scipy>=1.7.0',
     ],
-    classifiers=[  # Optional, helps categorize your project on PyPI
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",  # Choose appropriate license
-        "Operating System :: OS Independent",
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
+        'Topic :: Multimedia :: Graphics :: Graphics Conversion',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
-    python_requires='>=3.6',  # Specify the minimum Python version
-    include_package_data=True,  # Include non-Python files specified in MANIFEST.in
-    entry_points={  # Optional, define command line scripts if necessary
-        'console_scripts': [
-            'dct-pipeline=image_processing_project.dct_pipeline:main',
-            'ksvd=image_processing_project.ksvd:main',
-        ],
-    },
+    python_requires='>=3.8',
 )
