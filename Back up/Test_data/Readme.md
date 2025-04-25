@@ -1,2 +1,0 @@
-- This folder contains the test data to verify our algorithms.
-- It is in .pmg format . To open it you can use **f = open('/artificial.pgm', 'rb')**
