@@ -1,4 +1,4 @@
-BPSO Package
+"""BPSO Package
 
 This package provides:
 svd_bpso: Image compression using SVD and PSO optimization
