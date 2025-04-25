@@ -1,13 +1,11 @@
-from matplotlib.image import imread
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 from math import log10
 import math
 import random
-import Block_SVD as svd
+from ..svd.block_svd import Block_SVD
 
-def svd_bpso(image, p_n = None, n_iterations = None)
+def svd_bpso(input_matrix, p_n = None, n_iterations = None)
     # Check whether the input matrix is colour or gray
     if len(image.shape)>2:
         X = image.dot([0.299, 0.5870, 0.114])
@@ -16,16 +14,11 @@ def svd_bpso(image, p_n = None, n_iterations = None)
     # Initializing number of particles and iterations if they arent specified
     if p_n is None:
         p_n = 30
-    if n_iteration is None:
+    if n_iterations is None:
         n_iterations = 5
         
     # Apply SVD on the input matrix X
-    U, sig, VT = svd.Block_SVD(X)
-    # Display of original matrix in grayscale
-    img = plt.imshow(X)
-    img.set_cmap('gray')
-    plt.axis('off')
-    plt.show()
+    U, sig, VT = Block_SVD(X)
 
     #initializing PSO parameters
     c1 = 2 # Cognitive component

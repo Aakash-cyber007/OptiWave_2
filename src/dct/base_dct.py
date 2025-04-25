@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
-from utils.image_loader import load_image
-from utils.metrics import time_function
+from ..utils.image_loader import load_image
+from ..utils.metrics import time_function
 
 
 def normalize_image(image: np.ndarray) -> np.ndarray:

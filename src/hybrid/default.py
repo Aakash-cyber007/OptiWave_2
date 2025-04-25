@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
-from my_library import SVD
-from time import perf_counter
+from ..utils.metrics import time_function, compute_snr
 
+''' Works with numpy (ksvd)'''
 
 def extract_patches(image, patch_size, stride):
     """
@@ -20,6 +20,7 @@ def extract_patches(image, patch_size, stride):
             patches.append(patch)
             positions.append((i, j))
     return np.array(patches).T, positions, image.shape
+
 
 def omp(D, Y, sparsity):
     """
@@ -81,7 +82,7 @@ def ksvd(IMAGE : str, patch_size = 8, stride = 8, sparsity = 5, max_iter=20):
                 continue
             E_j = Y[:, index_j] - D @ X[:, index_j] + np.outer(D[:, j], X[j, index_j])
             #U, S, Vt = np.linalg.svd(E_j, full_matrices=False)
-            U, S, Vt = svds(E_j, k=1, which='LM')
+            U, S, Vt = np.linalg.svd(E_j, k=1, which='LM')
             D[:,j] = U[: ,0]
             X[j, index_j] = S[0]*Vt[0 ,:]
     
