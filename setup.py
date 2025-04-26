@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name="OptiWave",
     version="0.1.0",
-    packages=["src"],
-    package_dir={"OptiWave": "src"},
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     install_requires=[
         'numpy>=1.18.0',  # Example of a dependency
         'scipy>=1.5.0'
